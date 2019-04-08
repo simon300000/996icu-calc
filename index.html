@@ -17,11 +17,11 @@
 		}, {
 			name: 'sunday',
 			placeholder: '一周休息日加班时间',
-			unit: '小时'
+			unit: '天'
 		}, {
 			name: 'newYear',
 			placeholder: '一年节假日加班时间',
-			unit: '小时'
+			unit: '天'
 		}]
 		window.update = () => {
 			let input = {}
@@ -34,7 +34,7 @@
 				sunday,
 				newYear
 			} = input
-			let money = base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 260)
+			let money = base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 261)
 			document.getElementsByName('result')[0].innerHTML = money
 		}
 
