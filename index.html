@@ -34,7 +34,7 @@
 				sunday,
 				newYear
 			} = input
-			let money = base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 261)
+			let money = base * (1.5 * monday / 40 + 2 * sunday / 5 + 3 * newYear / 261)
 			document.getElementsByName('result')[0].innerHTML = money
 		}
 
@@ -51,7 +51,7 @@
 	<form oninput="update()" onsubmit="return false">
 	</form>
 	<div>
-		算法按照 base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 261)
+		算法按照 base * (1.5 * monday / 40 + 2 * sunday / 5 + 3 * newYear / 261)
 		<br>
 		base：年薪
 		<br>
