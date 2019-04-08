@@ -35,7 +35,7 @@
 				newYear
 			} = input
 			let money = base * (1.5 * monday / 40 + 2 * sunday / 5 + 3 * newYear / 261)
-			document.getElementsByName('result')[0].innerHTML = money
+			document.getElementsByName('result')[0].innerHTML = Math.round(mondy * 100) / 100
 		}
 
 	</script>
@@ -74,6 +74,7 @@
 		document.getElementsByTagName('form')[0].appendChild(unit)
 		document.getElementsByTagName('form')[0].appendChild(document.createElement('br'))
 	}
+	update()
 
 </script>
 
