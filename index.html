@@ -50,6 +50,17 @@
 	</div>
 	<form oninput="update()" onsubmit="return false">
 	</form>
+	<div>
+		算法按照 base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 261)
+		<br>
+		base：年薪
+		<br>
+		monday：每周工作日加班时间，单位小时
+		<br>
+		sunday：每周休息日加班时间，单位 天
+		<br>
+		newYear：每年节假日加班时间，单位 天
+	</div>
 </body>
 <script type="text/javascript">
 	for (let i = 0; i < data.length; i++) {
