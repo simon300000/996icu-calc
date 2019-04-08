@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>996-¥Calc</title>
+
+	<script type="text/javascript">
+		const data = [{
+			name: 'base',
+			placeholder: '年薪',
+			unit: ''
+		}, {
+			name: 'monday',
+			placeholder: '一周工作日加班时间',
+			unit: '小时'
+		}, {
+			name: 'sunday',
+			placeholder: '一周休息日加班时间',
+			unit: '小时'
+		}, {
+			name: 'newYear',
+			placeholder: '一年节假日加班时间',
+			unit: '小时'
+		}]
+		window.update = () => {
+			let input = {}
+			for (let i = 0; i < data.length; i++) {
+				input[data[i].name] = Number(document.getElementsByName(data[i].name)[0].value || 0)
+			}
+			let {
+				base,
+				monday,
+				sunday,
+				newYear
+			} = input
+			let money = base * (1.5 * monday / 40 + 2 * sunday / 40 + 3 * newYear / 260)
+			document.getElementsByName('result')[0].innerHTML = money
+		}
+
+	</script>
+</head>
+
+<body>
+	<div>
+		时间单位为小时
+	</div>
+	<div>
+		你的加班费：<span name="result"></span>
+	</div>
+	<form oninput="update()" onsubmit="return false">
+	</form>
+</body>
+<script type="text/javascript">
+	for (let i = 0; i < data.length; i++) {
+		let e = document.createElement('input')
+		e.setAttribute('name', data[i].name)
+		e.setAttribute('placeholder', data[i].placeholder)
+		e.setAttribute('type', 'number')
+		document.getElementsByTagName('form')[0].appendChild(e)
+		let unit = document.createElement('span')
+		unit.innerHTML = data[i].unit
+		document.getElementsByTagName('form')[0].appendChild(unit)
+		document.getElementsByTagName('form')[0].appendChild(document.createElement('br'))
+	}
+
+</script>
+
+</html>
