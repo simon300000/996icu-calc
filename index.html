@@ -35,7 +35,8 @@
 				newYear
 			} = input
 			let money = base * (1.5 * monday / 40 + 2 * sunday / 5 + 3 * newYear / 261)
-			document.getElementsByName('result')[0].innerHTML = Math.round(money * 100) / 100
+			let round = Math.round(money * 100) / 100
+			document.getElementsByName('result')[0].innerHTML = round.toLocaleString()
 		}
 
 	</script>
